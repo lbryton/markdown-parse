@@ -22,9 +22,6 @@ public class MarkdownParse2 {
             else if (openParen != nextCloseBracket + 1){
                 currentIndex = openParen + 1;
             }
-            else if (markdown.substring(nextOpenBracket + 1, nextCloseBracket).equals("Image")){
-                currentIndex = nextCloseBracket + 1;
-            }
             else {
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
                 currentIndex = closeParen + 1;
