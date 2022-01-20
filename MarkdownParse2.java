@@ -11,12 +11,14 @@ public class MarkdownParse2 {
         // the next )
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
-            int nextOpenBracket = markdown.indexOf("[", currentIndex);
+            int nextOpenBracket = loc(markdown, currentIndex, "[");
+            //markdown.indexOf("[", currentIndex);
             int nextCloseBracket = loc(markdown, currentIndex, "]");
-            //System.out.println(nextCloseBracket);
             //markdown.indexOf("]", nextOpenBracket);
-            int openParen = markdown.indexOf("(", nextCloseBracket);
-            int closeParen = markdown.indexOf(")", openParen);
+            int openParen = loc(markdown, currentIndex, "(");
+            //markdown.indexOf("(", nextCloseBracket);
+            int closeParen = loc(markdown, currentIndex, ")");
+            //markdown.indexOf(")", openParen);
 
             if (nextOpenBracket == -1 || nextCloseBracket == -1 
                 || openParen == -1 || closeParen == -1){
