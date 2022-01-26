@@ -1,1 +1,0 @@
-[anote\]](https://something.com)
